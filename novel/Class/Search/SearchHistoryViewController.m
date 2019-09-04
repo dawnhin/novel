@@ -54,6 +54,8 @@ static NSString * const identifier=@"StartCollectionViewCell";
 -(void)goBack{
     [self.navigationController popViewControllerAnimated:YES];
 }
+-(void)deleteAction{
+}
 /*
 #pragma mark - Navigation
 
@@ -101,6 +103,9 @@ static NSString * const identifier=@"StartCollectionViewCell";
         reusableView.title.text=@"历史记录";
         [reusableView.moreButton setTitle:@"删除" forState:UIControlStateNormal];
     }
+    [reusableView.moreButton setBlockForControlEvents:UIControlEventTouchUpInside block:^(id  _Nonnull sender) {
+        indexPath.section == 0 ? [self headerRefreshing] : [self deleteAction];
+    }];
     return reusableView;
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
