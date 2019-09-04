@@ -1,0 +1,6 @@
+framework module AppBaseCategory {
+  umbrella header "AppBaseCategory-umbrella.h"
+
+  export *
+  module * { export * }
+}

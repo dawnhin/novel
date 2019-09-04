@@ -1,0 +1,26 @@
+//
+//  PrefixHeader.pch
+//  novel
+//
+//  Created by 黎铭轩 on 15/7/2019.
+//  Copyright © 2019 黎铭轩. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <YYKit/YYKit.h>
+#import "UINavigationController+FDFullscreenPopGesture.h"
+#import "CategoryKit.h"
+#import <Masonry/Masonry.h>
+#import "BaseMacro.h"
+#import <AppBaseCategory/ATMacro.h>
+#import "NovelNetManager.h"
+#import "NovelTabBarController.h"
+#import "UserManager.h"
+#import "RankModel.h"
+#import <SDWebImage/SDWebImage.h>
+#import "UICollectionView+ARDynamicCacheHeightLayoutCell.h"
+#endif /* PrefixHeader_pch */

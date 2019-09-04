@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController">
+            <connections>
+                <outlet property="boyButton" destination="xsn-u9-SUY" id="7cq-j6-Iig"/>
+                <outlet property="girlButton" destination="lQk-kN-jjt" id="Yzz-XB-Oaf"/>
+                <outlet property="titleLabel" destination="xU9-bz-ert" id="1kC-FR-glA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择您的性别" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xU9-bz-ert">
+                    <rect key="frame" x="20" y="117.5" width="335" height="36"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                    <color key="textColor" red="0.33333333329999998" green="0.75294117650000003" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsn-u9-SUY">
+                    <rect key="frame" x="77.5" y="203.5" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="MAp-qr-kee"/>
+                        <constraint firstAttribute="width" constant="100" id="VVR-Vv-Ier"/>
+                    </constraints>
+                    <state key="normal" image="icon_boy"/>
+                    <connections>
+                        <action selector="boyAction:" destination="-1" eventType="touchUpInside" id="9cl-XF-b5p"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQk-kN-jjt">
+                    <rect key="frame" x="197.5" y="203.5" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="cwD-da-TVv"/>
+                        <constraint firstAttribute="width" constant="100" id="jnr-Tm-7DF"/>
+                    </constraints>
+                    <state key="normal" image="icon_woman"/>
+                    <connections>
+                        <action selector="girlAction:" destination="-1" eventType="touchUpInside" id="JE8-j6-ARA"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xsn-u9-SUY" firstAttribute="top" secondItem="xU9-bz-ert" secondAttribute="bottom" constant="50" id="3W6-Zr-w6A"/>
+                <constraint firstItem="lQk-kN-jjt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="60" id="HyJ-Af-d3g"/>
+                <constraint firstItem="lQk-kN-jjt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-80" id="IKC-Fd-FZw"/>
+                <constraint firstItem="xsn-u9-SUY" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-80" id="Idx-v1-Emq"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="xU9-bz-ert" secondAttribute="trailing" constant="20" id="SG6-yr-3sd"/>
+                <constraint firstItem="xU9-bz-ert" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="dtT-4W-Uwd"/>
+                <constraint firstItem="xsn-u9-SUY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-60" id="hDZ-bG-yQ7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_boy" width="80" height="80"/>
+        <image name="icon_woman" width="80" height="80"/>
+    </resources>
+</document>

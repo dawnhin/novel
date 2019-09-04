@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NewNavigationBarView">
+            <rect key="frame" x="0.0" y="0.0" width="379" height="107"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LsU-C1-UsV">
+                    <rect key="frame" x="16" y="67.5" width="303" height="35"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1k-Fl-V9k">
+                            <rect key="frame" x="30" y="0.0" width="273" height="35"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_strategy_search" translatesAutoresizingMaskIntoConstraints="NO" id="Rqx-XE-BYV">
+                            <rect key="frame" x="10" y="11" width="12" height="13"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="12" id="Efy-W1-goA"/>
+                                <constraint firstAttribute="height" constant="13" id="RmT-DF-I5M"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="a1k-Fl-V9k" firstAttribute="top" secondItem="LsU-C1-UsV" secondAttribute="top" id="B7u-ZD-bqI"/>
+                        <constraint firstItem="Rqx-XE-BYV" firstAttribute="centerY" secondItem="LsU-C1-UsV" secondAttribute="centerY" id="LE1-St-1iP"/>
+                        <constraint firstAttribute="bottom" secondItem="a1k-Fl-V9k" secondAttribute="bottom" id="Lb3-Sx-Brd"/>
+                        <constraint firstAttribute="trailing" secondItem="a1k-Fl-V9k" secondAttribute="trailing" id="MVV-lQ-oXl"/>
+                        <constraint firstAttribute="height" constant="35" id="ON4-z9-Lvc"/>
+                        <constraint firstItem="Rqx-XE-BYV" firstAttribute="leading" secondItem="LsU-C1-UsV" secondAttribute="leading" constant="10" id="eDr-tE-pC9"/>
+                        <constraint firstItem="a1k-Fl-V9k" firstAttribute="leading" secondItem="Rqx-XE-BYV" secondAttribute="trailing" constant="8" id="roy-jS-fbk"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeN-mC-26f">
+                    <rect key="frame" x="327" y="63" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="VDO-xH-OEm"/>
+                        <constraint firstAttribute="height" constant="44" id="ZxU-Kk-xkG"/>
+                    </constraints>
+                    <state key="normal" image="icon_boy_h"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.45347744229999998" green="0.63115257020000004" blue="0.94905596969999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="xeN-mC-26f" firstAttribute="centerY" secondItem="LsU-C1-UsV" secondAttribute="centerY" id="00x-wS-H7q"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xeN-mC-26f" secondAttribute="bottom" id="1aN-tM-O6k"/>
+                <constraint firstItem="xeN-mC-26f" firstAttribute="leading" secondItem="LsU-C1-UsV" secondAttribute="trailing" constant="8" id="2V2-dS-KJi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xeN-mC-26f" secondAttribute="trailing" constant="8" id="Qsh-p7-0WX"/>
+                <constraint firstItem="LsU-C1-UsV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="tJV-E9-pbl"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="mainView" destination="a1k-Fl-V9k" id="wgu-T4-KOd"/>
+                <outlet property="moreButton" destination="xeN-mC-26f" id="0DL-GS-09v"/>
+                <outlet property="searchView" destination="LsU-C1-UsV" id="gCu-ZS-dPE"/>
+            </connections>
+            <point key="canvasLocation" x="135.19999999999999" y="300.89955022488761"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_strategy_search" width="12" height="13"/>
+        <image name="icon_boy_h" width="25" height="25"/>
+    </resources>
+</document>

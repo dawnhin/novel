@@ -1,0 +1,16 @@
+${PODS_ROOT}/Target Support Files/Pods-novel/Pods-novel-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/AppBaseCategory/AppBaseCategory.framework
+${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework
+${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework
+${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework
+${BUILT_PRODUCTS_DIR}/HWPanModal/HWPanModal.framework
+${BUILT_PRODUCTS_DIR}/KLRecycleScrollView/KLRecycleScrollView.framework
+${BUILT_PRODUCTS_DIR}/KVOController/KVOController.framework
+${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
+${BUILT_PRODUCTS_DIR}/MMPopupView/MMPopupView.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/UICollectionView-ARDynamicHeightLayoutCell/UICollectionView_ARDynamicHeightLayoutCell.framework
+${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework
