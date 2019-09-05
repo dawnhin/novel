@@ -33,8 +33,8 @@ static NSString * const identifier=@"StartCollectionViewCell";
         make.left.right.bottom.equalTo(self.view);
         make.top.equalTo(self.searchView.mas_bottom);
     }];
-    [self.collectionView registerNib:[UINib nibWithNibName:@"StartCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:identifier];
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"HomeCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:@"header" withReuseIdentifier:@"HomeCollectionReusableView"];
+//    [self.collectionView registerNib:[UINib nibWithNibName:@"StartCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:identifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"HomeCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HomeCollectionReusableView"];
     [self setupEmpty:self.collectionView];
     [self setupRefresh:self.collectionView option:ATRefreshDefault];
 }
@@ -72,7 +72,7 @@ static NSString * const identifier=@"StartCollectionViewCell";
     return section==0 ? self.listDatas.count:self.searchDatas.count;
 };
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    StartCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    StartCollectionViewCell *cell=[StartCollectionViewCell cellForCollectionView:collectionView indexPath:indexPath state:StartStateBoard];
     NSArray *listData=indexPath.section==0 ? self.listDatas : self.searchDatas;
     cell.titleLabel.text=listData[indexPath.row];
     return cell;
@@ -90,8 +90,8 @@ static NSString * const identifier=@"StartCollectionViewCell";
     return 10;
 }
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    HomeCollectionReusableView *reusableView=[HomeCollectionReusableView viewForCollectionView:collectionView elementKind:kind indexPath:indexPath];
-//    [collectionView dequeueReusableSupplementaryViewOfKind:@"header" withReuseIdentifier:@"HomeCollectionReusableView" forIndexPath:indexPath];
+//    HomeCollectionReusableView *reusableView=[HomeCollectionReusableView viewForCollectionView:collectionView elementKind:kind indexPath:indexPath];
+    HomeCollectionReusableView *reusableView=[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HomeCollectionReusableView" forIndexPath:indexPath];
     NSArray *listData=indexPath.section == 0 ? self.listDatas : self.searchDatas;
     reusableView.title.font=[UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
     reusableView.hidden=listData.count==0;

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ReadBottomView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="171"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6T-fR-l4P" customClass="ATImageTopButton">
+                    <rect key="frame" x="0.0" y="0.0" width="125" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="fbU-4f-AtX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="白天" image="icon_white"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pi-Lz-yTj" customClass="ATImageTopButton">
+                    <rect key="frame" x="250" y="0.0" width="125" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="Paa-ab-wEf"/>
+                    </constraints>
+                    <state key="normal" title="设置" image="icon_set"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5x-bf-kqx" customClass="ATImageTopButton">
+                    <rect key="frame" x="125" y="0.0" width="125" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="Jkk-eF-QA4"/>
+                    </constraints>
+                    <state key="normal" title="目录" image="icon_mulu"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="e6T-fR-l4P" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0hN-lc-kFl"/>
+                <constraint firstItem="6Pi-Lz-yTj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="AKs-qb-IL2"/>
+                <constraint firstItem="q5x-bf-kqx" firstAttribute="width" secondItem="6Pi-Lz-yTj" secondAttribute="width" id="D8K-pZ-VtU"/>
+                <constraint firstItem="e6T-fR-l4P" firstAttribute="width" secondItem="q5x-bf-kqx" secondAttribute="width" id="Hu7-3l-BSF"/>
+                <constraint firstItem="q5x-bf-kqx" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="MGs-1Z-EdT"/>
+                <constraint firstItem="e6T-fR-l4P" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="O5E-ck-53B"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6Pi-Lz-yTj" secondAttribute="trailing" id="cpZ-f3-XDb"/>
+                <constraint firstItem="q5x-bf-kqx" firstAttribute="leading" secondItem="e6T-fR-l4P" secondAttribute="trailing" id="iwR-ph-Gt6"/>
+                <constraint firstItem="6Pi-Lz-yTj" firstAttribute="leading" secondItem="q5x-bf-kqx" secondAttribute="trailing" id="oCE-8A-V5Y"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="cateButton" destination="6Pi-Lz-yTj" id="M1i-TE-eM3"/>
+                <outlet property="dayButton" destination="e6T-fR-l4P" id="7J2-sZ-dnQ"/>
+                <outlet property="setButton" destination="q5x-bf-kqx" id="knZ-gU-M81"/>
+            </connections>
+            <point key="canvasLocation" x="146.40000000000001" y="461.01949025487261"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_mulu" width="24" height="24"/>
+        <image name="icon_set" width="24" height="24"/>
+        <image name="icon_white" width="24" height="24"/>
+    </resources>
+</document>

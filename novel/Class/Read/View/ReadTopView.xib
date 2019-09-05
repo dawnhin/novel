@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ReadTopView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obn-lQ-c2s">
+                    <rect key="frame" x="10" y="82" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="JRA-no-ffC"/>
+                        <constraint firstAttribute="height" constant="25" id="mhj-kU-V7Z"/>
+                    </constraints>
+                    <state key="normal" image="icon_nav_close"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mp8-AF-eCI">
+                    <rect key="frame" x="340" y="82" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="byZ-HS-SFR"/>
+                        <constraint firstAttribute="width" constant="25" id="eve-0b-Oas"/>
+                    </constraints>
+                    <state key="normal" image="icon_yan"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eL-Dd-LHv">
+                    <rect key="frame" x="35" y="84" width="305" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.19261813163757324" green="0.19896739721298218" blue="0.24706491827964783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="8eL-Dd-LHv" firstAttribute="centerY" secondItem="obn-lQ-c2s" secondAttribute="centerY" id="AG0-CA-u4m"/>
+                <constraint firstAttribute="bottom" secondItem="obn-lQ-c2s" secondAttribute="bottom" constant="7" id="J1k-BE-iX0"/>
+                <constraint firstItem="8eL-Dd-LHv" firstAttribute="leading" secondItem="obn-lQ-c2s" secondAttribute="trailing" id="PR1-4G-xuk"/>
+                <constraint firstItem="obn-lQ-c2s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Rqr-us-VHl"/>
+                <constraint firstAttribute="bottom" secondItem="Mp8-AF-eCI" secondAttribute="bottom" constant="7" id="ee9-1b-4uI"/>
+                <constraint firstAttribute="trailing" secondItem="Mp8-AF-eCI" secondAttribute="trailing" constant="10" id="mqc-ET-Mbo"/>
+                <constraint firstItem="Mp8-AF-eCI" firstAttribute="leading" secondItem="8eL-Dd-LHv" secondAttribute="trailing" id="pGM-r1-bKH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="closeButton" destination="obn-lQ-c2s" id="F1d-Vg-D1H"/>
+                <outlet property="moreButton" destination="Mp8-AF-eCI" id="INQ-Cz-TdQ"/>
+                <outlet property="titleLabel" destination="8eL-Dd-LHv" id="Qtv-eB-E6u"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="402.09895052473769"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_nav_close" width="35" height="35"/>
+        <image name="icon_yan" width="25" height="25"/>
+    </resources>
+</document>
