@@ -20,6 +20,10 @@ target 'novel' do
   pod 'HWPanModal'
   pod 'SVProgressHUD'
   pod 'KLRecycleScrollView'
+  pod 'mob_sharesdk'
+  pod 'mob_sharesdk/ShareSDKPlatforms/QQ'
+  pod 'mob_sharesdk/ShareSDKPlatforms/SinaWeibo'
+  pod 'mob_sharesdk/ShareSDKPlatforms/WeChat’
   #pod 'lottie-ios'
   # Pods for novel
 

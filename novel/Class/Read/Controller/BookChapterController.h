@@ -13,5 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BookChapterController : BaseTableViewController
 +(instancetype)viewControllerWithChapter:(NSString *)bookSourceID chapter:(NSInteger)chapter completion:(void (^)(NSInteger index))completion;
 @end
-
+@interface BookSourceController : BaseTableViewController
++(instancetype)viewControllerWithChapter:(NSString *)bookID sourceID:(NSString *)sourceID completion:(void(^)(NSInteger index))completion;
+@end
 NS_ASSUME_NONNULL_END

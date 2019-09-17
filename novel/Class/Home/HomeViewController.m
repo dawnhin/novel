@@ -118,6 +118,17 @@
     }
     return cell;
 }
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    GKBookInfo *info=self.listData[indexPath.section];
+    GKBookModel *model=info.listData[indexPath.row];
+    if ([model isKindOfClass:[GKBookModel class]]) {
+        [JumpApp jumpToBookDetail:model._id];
+    }
+    else if ([model isKindOfClass:[GKBookReadModel class]]){
+        GKBookReadModel *info=(GKBookReadModel *)model;
+        [JumpApp jumpToBookDetail:info.bookModel._id];
+    }
+}
 -(void)clickMore{
     if ([self.bookInfo.listData.firstObject isKindOfClass:[GKBookDetailInfo class]]) {
         [JumpApp jumpToBookCase];

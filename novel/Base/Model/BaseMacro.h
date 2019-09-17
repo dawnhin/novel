@@ -32,6 +32,8 @@ typedef NS_ENUM(NSUInteger, UserState) {
     UserBoy=1,
     UserGirl,
 };
+#define WChatAppKey              @"wx4105c558f6bb1bd1"//微信平台appKey
+#define QQAppKey                 @"1109550572" //设置QQ平台的appID
 typedef NS_ENUM(NSInteger, LoadDataState) {
     LoadDataNone    =  0,
     LoadDataNetData =  1 << 1,

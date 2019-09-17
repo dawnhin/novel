@@ -17,12 +17,14 @@
         make.left.equalTo(self).offset(15);
         make.baseline.equalTo(self).offset(-5);
     }];
+    [self.title setContentHuggingPriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
     [self addSubview:self.moreButton];
     [self.moreButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.title.mas_right).offset(10);
         make.right.equalTo(self).offset(-15);
         make.bottom.equalTo(self.title.mas_baseline);
     }];
+    [self.moreButton setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
 }
 - (UILabel *)title{
     if (!_title) {

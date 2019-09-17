@@ -9,6 +9,8 @@
 #import "BookChapterController.h"
 #import "GKBookChapterModel.h"
 #import "BookChapterTableViewCell.h"
+#import "GKBookSourceModel.h"
+#import "BookChapterCell.h"
 @interface BookChapterController()
 @property (assign, nonatomic)NSInteger chapterItem;
 @property (strong, nonatomic)NSString *bookSourceID;
@@ -58,5 +60,61 @@ static NSString * const cellID=@"BookChapterTableViewCell";
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return UITableViewAutomaticDimension;
+}
+@end
+
+@interface BookSourceController()
+@property (strong, nonatomic)NSString *bookID;
+@property (strong, nonatomic)NSString *sourceID;
+@property (strong, nonatomic)NSArray<GKBookSourceModel *> *listData;
+@property (copy, nonatomic)void(^completion)(NSInteger selectIndex);
+@end
+@implementation BookSourceController
+
++ (instancetype)viewControllerWithChapter:(NSString *)bookID sourceID:(NSString *)sourceID completion:(void (^)(NSInteger))completion{
+    BookSourceController *bookSource=[[BookSourceController alloc]init];
+    bookSource.bookID=bookID;
+    bookSource.sourceID=sourceID;
+    bookSource.completion=completion;
+    return bookSource;
+}
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    [self showNavTitle: @"源选择"];
+    [self setupEmpty:self.tableView];
+    [self setupRefresh:self.tableView option:ATRefreshDefault];
+    [self.tableView registerClass:[BookChapterCell class] forCellReuseIdentifier:@"BookChapterCell"];
+    self.tableView.estimatedRowHeight=44;
+}
+- (void)refreshData:(NSInteger)page{
+    [NovelNetManager bookSummary:self.bookID success:^(id  _Nonnull object) {
+        self.listData=[NSArray modelArrayWithClass:[GKBookSourceModel class] json:object];
+        [self.tableView reloadData];
+        [self endRefresh:NO];
+    } failure:^(NSString * _Nonnull error) {
+        [self endRefreshFailure];
+    }];
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.listData.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    BookChapterCell *cell=[tableView dequeueReusableCellWithIdentifier:@"BookChapterCell"];
+    GKBookSourceModel *model=self.listData[indexPath.row];
+    cell.image.hidden=![model._id isEqualToString:self.sourceID];
+    cell.model=model;
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewAutomaticDimension;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.completion) {
+        self.completion(indexPath.row);
+    }
+    [self goBack];
 }
 @end

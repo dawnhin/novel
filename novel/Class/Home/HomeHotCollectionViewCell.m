@@ -19,7 +19,8 @@
         self.imageView=imageView;
         UIButton *tagButton=[[UIButton alloc]init];
         self.tagButton=tagButton;
-        UIButton *deleteButton=[[UIButton alloc]init];
+        UIButton *deleteButton=[UIButton buttonWithType:UIButtonTypeCustom];
+        deleteButton.hidden=YES;
         self.deleteButton=deleteButton;
         UILabel *titleLabel=[[UILabel alloc]init];
         titleLabel.font=[UIFont systemFontOfSize:13];
@@ -53,6 +54,11 @@
         make.top.equalTo(self.imageView.mas_bottom).offset(10);
         make.bottom.equalTo(self.contentView).offset(-5);
     }];
+    [self.deleteButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.top.equalTo(self.contentView);
+        make.width.height.mas_equalTo(30);
+    }];
+    [self.deleteButton setBackgroundImage:[UIImage imageNamed:@"icon_delete"] forState:UIControlStateNormal];
 }
 - (void)setModel:(id)model{
     if ([model isKindOfClass: [GKBookModel class]]) {

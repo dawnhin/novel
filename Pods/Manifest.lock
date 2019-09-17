@@ -28,6 +28,21 @@ PODS:
   - MJRefresh (3.2.0)
   - MMPopupView (1.7.3):
     - Masonry
+  - mob_sharesdk (4.2.7):
+    - mob_sharesdk/ShareSDK (= 4.2.7)
+    - MOBFoundation
+  - mob_sharesdk/ShareSDK (4.2.7):
+    - MOBFoundation
+  - mob_sharesdk/ShareSDKPlatforms/QQ (4.2.7):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation
+  - mob_sharesdk/ShareSDKPlatforms/SinaWeibo (4.2.7):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation
+  - mob_sharesdk/ShareSDKPlatforms/WeChat (4.2.7):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation
+  - MOBFoundation (3.2.3)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
@@ -49,6 +64,10 @@ DEPENDENCIES:
   - Masonry
   - MJRefresh
   - MMPopupView (from `https://github.com/CoderLT/MMPopupView.git`)
+  - mob_sharesdk
+  - mob_sharesdk/ShareSDKPlatforms/QQ
+  - mob_sharesdk/ShareSDKPlatforms/SinaWeibo
+  - mob_sharesdk/ShareSDKPlatforms/WeChat
   - SDWebImage
   - SVProgressHUD
   - UICollectionView-ARDynamicHeightLayoutCell
@@ -66,6 +85,8 @@ SPEC REPOS:
     - KVOController
     - Masonry
     - MJRefresh
+    - mob_sharesdk
+    - MOBFoundation
     - SDWebImage
     - SVProgressHUD
     - UICollectionView-ARDynamicHeightLayoutCell
@@ -92,11 +113,13 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MMPopupView: b717b7fe100707ef3fcd17c93b050e4b9d0a60da
+  mob_sharesdk: 6f1392f547cfbe7395ab82f40be4b04783c61eaf
+  MOBFoundation: 246159a97f5e6c8a271b674dd885dc4b0953e45e
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UICollectionView-ARDynamicHeightLayoutCell: e4fe689e913819b7f7933dcd7bc3503f09c0e979
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: c90f6232900d2ee32718f794c0415e2716dc31cd
+PODFILE CHECKSUM: 63f2ff1c399077969e5f044ab36120c6fd0c2245
 
 COCOAPODS: 1.7.3

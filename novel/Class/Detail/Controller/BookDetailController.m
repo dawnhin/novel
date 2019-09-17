@@ -23,10 +23,11 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "JumpApp.h"
 #import "BookDetailCollectionViewCell.h"
+#import "GKBookCacheDataQueue.h"
 @interface BookDetailController ()
 @property (strong, nonatomic)NSString *bookID;
 @property (weak, nonatomic) BookDetailTabbar *Tabbar;
-@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+@property (strong, nonatomic)UILabel *tipLabel;
 @property (strong, nonatomic)GKBookDetailInfo *bookDetail;
 @property (strong, nonatomic)GKBookCacheTool *bookCache;
 @property (strong, nonatomic)ASProgressPopUpView *progressView;
@@ -47,10 +48,12 @@
 }
 -(void)loadUI{
     [self showNavTitle:@"书籍详情"];
-    self.tipLabel.textColor=AppColor;
-    self.tipLabel.backgroundColor=[UIColor colorWithRGB:0xf6f6f6];
     [self setupEmpty:self.collectionView];
     [self setupRefresh:self.collectionView option:ATRefreshDefault];
+    [self.view addSubview:self.tipLabel];
+    [self.tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.equalTo(self.view);
+    }];
     [self.view addSubview:self.Tabbar];
     [self.Tabbar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
@@ -62,6 +65,7 @@
         make.left.right.equalTo(self.view);
         make.bottom.equalTo(self.Tabbar.mas_top);
     }];
+    self.collectionView.backgroundColor=[UIColor clearColor];
     [self.collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);
         make.bottom.equalTo(self.Tabbar.mas_top);
@@ -118,24 +122,26 @@
                         [self reloadUI:NO];
                     }
                 }];
+                [GKBookCacheDataQueue dropTableFromDataBase:self.bookDetail.bookModel._id completion:nil];
             }
             else{
-                [GKBookCaseDataQueue insertDataToDataBase:self.bookDetail.bookModel completion:^(BOOL success) {
-                    if (success) {
-                        [self reloadUI:YES];
-                    }
-                }];
-                __weak typeof(self)WeakSelf=self;
-                [self.bookCache downloadData:self.bookDetail.bookModel._id progress:^(NSInteger index, NSInteger total) {
-                    CGFloat download= index / total;
-                    [WeakSelf.progressView setHidden:NO];
-                    [WeakSelf.progressView setProgress:download animated:YES];
-                } completion:^(BOOL finish, NSString *error) {
-                    if (finish) {
-                        [SVProgressHUD showSuccessWithStatus: @"下载成功!"];
-                        [self.progressView setHidden:YES];
-                    }
-                }];
+//                [GKBookCaseDataQueue insertDataToDataBase:self.bookDetail.bookModel completion:^(BOOL success) {
+//                    if (success) {
+//                        [self reloadUI:YES];
+//                    }
+//                }];
+//                __weak typeof(self)WeakSelf=self;
+//                [self.bookCache downloadData:self.bookDetail.bookModel._id progress:^(NSInteger index, NSInteger total) {
+//                    CGFloat download= index / total;
+//                    [WeakSelf.progressView setHidden:NO];
+//                    NSLog(@"download=%lf",download);
+//                    [WeakSelf.progressView setProgress:download animated:YES];
+//                } completion:^(BOOL finish, NSString *error) {
+//                    if (finish) {
+//                        [SVProgressHUD showSuccessWithStatus: @"下载成功!"];
+//                        [WeakSelf.progressView setHidden:YES];
+//                    }
+//                }];
             }
         }];
     }
@@ -145,16 +151,32 @@
                 [self reloadUI:YES];
             }
         }];
-        [self.bookCache downloadData:self.bookDetail.bookModel._id progress:^(NSInteger index, NSInteger total) {
-            CGFloat download=index/total;
-            [self.progressView setHidden:NO];
-            [self.progressView setProgress:download animated:YES];
-        } completion:^(BOOL finish, NSString *error) {
-            if (finish) {
-                [SVProgressHUD showSuccessWithStatus: @"下载成功！"];
-                [self.progressView setHidden:YES];
+        __weak typeof(self)WeakSelf=self;
+        __block float i=0;
+        [NSTimer scheduledTimerWithTimeInterval:1 block:^(NSTimer * _Nonnull timer) {
+            i+=0.1;
+            NSLog(@"%f",i);
+            [WeakSelf.progressView setHidden:NO];
+            [WeakSelf.progressView setProgress:i animated:YES];
+            if (i>=1) {
+                [timer invalidate];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [WeakSelf.progressView setHidden:YES];
+                    [SVProgressHUD showSuccessWithStatus: @"下载成功！"];
+                });
             }
-        }];
+        } repeats:YES];
+//        [self.bookCache downloadData:self.bookDetail.bookModel._id progress:^(NSInteger index, NSInteger total) {
+//            CGFloat download=index/total;
+//            NSLog(@"%f",download);
+//            [WeakSelf.progressView setHidden:NO];
+//            [WeakSelf.progressView setProgress:download animated:YES];
+//        } completion:^(BOOL finish, NSString *error) {
+//            if (finish) {
+//                [SVProgressHUD showSuccessWithStatus: @"下载成功！"];
+//                [WeakSelf.progressView setHidden:YES];
+//            }
+//        }];
     }
 }
 -(void)readAction{
@@ -279,5 +301,16 @@
         _bookCache=[[GKBookCacheTool alloc]init];
     }
     return _bookCache;
+}
+- (UILabel *)tipLabel{
+    if (!_tipLabel) {
+        _tipLabel=[[UILabel alloc]init];
+        _tipLabel.textAlignment=NSTextAlignmentCenter;
+        _tipLabel.font=[UIFont systemFontOfSize:12];
+        _tipLabel.textColor=AppColor;
+        _tipLabel.backgroundColor=[UIColor colorWithRGB:0xf6f6f6];
+        _tipLabel.numberOfLines=3;
+    }
+    return _tipLabel;
 }
 @end

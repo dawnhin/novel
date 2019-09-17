@@ -9,6 +9,8 @@
 #import "ThemeViewController.h"
 #import "ThemeTableViewCell.h"
 #import "ATAlertView.h"
+#import "JumpApp.h"
+#import "BookCaseViewController.h"
 @interface ThemeViewController ()
 @property (strong, nonatomic)NSMutableArray *listData;
 @end
@@ -66,7 +68,9 @@
     [ATAlertView showTitle:@"提示" message:@"切换主题会重新启动程序" normalButtons:@[@"取消"] highlightButtons:@[@"确定"] completion:^(NSUInteger index, NSString *buttonTitle) {
         if (index==1) {
             [AppTheme saveAppTheme:model];
-            
+            [JumpApp jumpToAppGuidePage:^{
+                [JumpApp jumpToAppTheme];
+            }];
         }
     }];
 }

@@ -26,7 +26,14 @@
 		264003BE231FFBDF0041EA2D /* BookChapterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 264003BD231FFBDF0041EA2D /* BookChapterController.m */; };
 		264003C22320055F0041EA2D /* BookChapterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 264003C02320055F0041EA2D /* BookChapterTableViewCell.m */; };
 		264003C32320055F0041EA2D /* BookChapterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264003C12320055F0041EA2D /* BookChapterTableViewCell.xib */; };
+		265AB4BB2320FA82008CB29C /* ReadSetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 265AB4BA2320FA82008CB29C /* ReadSetView.m */; };
+		265AB4BD2320FA8C008CB29C /* ReadSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265AB4BC2320FA8C008CB29C /* ReadSetView.xib */; };
+		265AB4C023210239008CB29C /* UIImage+circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 265AB4BF23210239008CB29C /* UIImage+circle.m */; };
+		265AB4C4232109BC008CB29C /* ReadSetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 265AB4C2232109BC008CB29C /* ReadSetCell.m */; };
+		265AB4C5232109BC008CB29C /* ReadSetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265AB4C3232109BC008CB29C /* ReadSetCell.xib */; };
 		267307F82318120C00E6B3D0 /* ClassItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267307F72318120C00E6B3D0 /* ClassItemViewController.m */; };
+		2688D25623239F6700B3FA90 /* BookChapterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2688D25523239F6700B3FA90 /* BookChapterCell.m */; };
+		26992663232E731C0067EAD7 /* ShareTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 26992662232E731C0067EAD7 /* ShareTool.m */; };
 		26A4A87623058F0E00C65BA7 /* ShareViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A4A87423058F0E00C65BA7 /* ShareViewCell.m */; };
 		26A4A87723058F0E00C65BA7 /* ShareViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A4A87523058F0E00C65BA7 /* ShareViewCell.xib */; };
 		26A514EB22E1B2DC007920A6 /* GKSearchDataQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A514E122E1B2DC007920A6 /* GKSearchDataQueue.m */; };
@@ -87,6 +94,7 @@
 		26B8D61F231FC1610055A209 /* ReadBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B8D61E231FC1610055A209 /* ReadBottomView.xib */; };
 		26BEFE9E22F8607300336479 /* ThemeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BEFE9C22F8607300336479 /* ThemeTableViewCell.m */; };
 		26BEFE9F22F8607300336479 /* ThemeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26BEFE9D22F8607300336479 /* ThemeTableViewCell.xib */; };
+		26BF4C6923225BB2008D9390 /* ReadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BF4C6823225BB2008D9390 /* ReadView.m */; };
 		26BF8E3622DED35F00FCCEF2 /* CollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BF8E3522DED35F00FCCEF2 /* CollectionViewLayout.m */; };
 		26BF8E3A22DF02A100FCCEF2 /* StartCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BF8E3822DF02A100FCCEF2 /* StartCollectionViewCell.m */; };
 		26BF8E3B22DF02A100FCCEF2 /* StartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26BF8E3922DF02A100FCCEF2 /* StartCollectionViewCell.xib */; };
@@ -239,8 +247,20 @@
 		264003BF2320055F0041EA2D /* BookChapterTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookChapterTableViewCell.h; sourceTree = "<group>"; };
 		264003C02320055F0041EA2D /* BookChapterTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookChapterTableViewCell.m; sourceTree = "<group>"; };
 		264003C12320055F0041EA2D /* BookChapterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookChapterTableViewCell.xib; sourceTree = "<group>"; };
+		265AB4B92320FA82008CB29C /* ReadSetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadSetView.h; sourceTree = "<group>"; };
+		265AB4BA2320FA82008CB29C /* ReadSetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadSetView.m; sourceTree = "<group>"; };
+		265AB4BC2320FA8C008CB29C /* ReadSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadSetView.xib; sourceTree = "<group>"; };
+		265AB4BE23210239008CB29C /* UIImage+circle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+circle.h"; sourceTree = "<group>"; };
+		265AB4BF23210239008CB29C /* UIImage+circle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+circle.m"; sourceTree = "<group>"; };
+		265AB4C1232109BC008CB29C /* ReadSetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadSetCell.h; sourceTree = "<group>"; };
+		265AB4C2232109BC008CB29C /* ReadSetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadSetCell.m; sourceTree = "<group>"; };
+		265AB4C3232109BC008CB29C /* ReadSetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReadSetCell.xib; sourceTree = "<group>"; };
 		267307F62318120C00E6B3D0 /* ClassItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassItemViewController.h; sourceTree = "<group>"; };
 		267307F72318120C00E6B3D0 /* ClassItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassItemViewController.m; sourceTree = "<group>"; };
+		2688D25423239F6700B3FA90 /* BookChapterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookChapterCell.h; sourceTree = "<group>"; };
+		2688D25523239F6700B3FA90 /* BookChapterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookChapterCell.m; sourceTree = "<group>"; };
+		26992661232E731C0067EAD7 /* ShareTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareTool.h; sourceTree = "<group>"; };
+		26992662232E731C0067EAD7 /* ShareTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareTool.m; sourceTree = "<group>"; };
 		26A4A87323058F0E00C65BA7 /* ShareViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewCell.h; sourceTree = "<group>"; };
 		26A4A87423058F0E00C65BA7 /* ShareViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewCell.m; sourceTree = "<group>"; };
 		26A4A87523058F0E00C65BA7 /* ShareViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareViewCell.xib; sourceTree = "<group>"; };
@@ -348,6 +368,8 @@
 		26BEFE9B22F8607300336479 /* ThemeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeTableViewCell.h; sourceTree = "<group>"; };
 		26BEFE9C22F8607300336479 /* ThemeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThemeTableViewCell.m; sourceTree = "<group>"; };
 		26BEFE9D22F8607300336479 /* ThemeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeTableViewCell.xib; sourceTree = "<group>"; };
+		26BF4C6723225BB2008D9390 /* ReadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadView.h; sourceTree = "<group>"; };
+		26BF4C6823225BB2008D9390 /* ReadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadView.m; sourceTree = "<group>"; };
 		26BF8E3422DED35F00FCCEF2 /* CollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewLayout.h; sourceTree = "<group>"; };
 		26BF8E3522DED35F00FCCEF2 /* CollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayout.m; sourceTree = "<group>"; };
 		26BF8E3722DF02A100FCCEF2 /* StartCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartCollectionViewCell.h; sourceTree = "<group>"; };
@@ -768,6 +790,8 @@
 			children = (
 				26A65D5622F9C5EA00EAFF94 /* UIImageView+GKLoad.h */,
 				26A65D5722F9C5EA00EAFF94 /* UIImageView+GKLoad.m */,
+				265AB4BE23210239008CB29C /* UIImage+circle.h */,
+				265AB4BF23210239008CB29C /* UIImage+circle.m */,
 			);
 			path = AppCategory;
 			sourceTree = "<group>";
@@ -807,6 +831,8 @@
 				26A4A87323058F0E00C65BA7 /* ShareViewCell.h */,
 				26A4A87423058F0E00C65BA7 /* ShareViewCell.m */,
 				26A4A87523058F0E00C65BA7 /* ShareViewCell.xib */,
+				26992661232E731C0067EAD7 /* ShareTool.h */,
+				26992662232E731C0067EAD7 /* ShareTool.m */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -902,6 +928,16 @@
 				264003BF2320055F0041EA2D /* BookChapterTableViewCell.h */,
 				264003C02320055F0041EA2D /* BookChapterTableViewCell.m */,
 				264003C12320055F0041EA2D /* BookChapterTableViewCell.xib */,
+				265AB4B92320FA82008CB29C /* ReadSetView.h */,
+				265AB4BA2320FA82008CB29C /* ReadSetView.m */,
+				265AB4BC2320FA8C008CB29C /* ReadSetView.xib */,
+				265AB4C1232109BC008CB29C /* ReadSetCell.h */,
+				265AB4C2232109BC008CB29C /* ReadSetCell.m */,
+				265AB4C3232109BC008CB29C /* ReadSetCell.xib */,
+				26BF4C6723225BB2008D9390 /* ReadView.h */,
+				26BF4C6823225BB2008D9390 /* ReadView.m */,
+				2688D25423239F6700B3FA90 /* BookChapterCell.h */,
+				2688D25523239F6700B3FA90 /* BookChapterCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1428,6 +1464,7 @@
 				26C7624722DC2EC900E739A7 /* Frameworks */,
 				26C7624822DC2EC900E739A7 /* Resources */,
 				3CE2CBC3468B0B3C514BAC43 /* [CP] Embed Pods Frameworks */,
+				93730ED8EAA8A20E6F0A29B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1527,6 +1564,7 @@
 				260E3B9622DD610D00563FBA /* 4.png in Resources */,
 				26A5E5F82306DE4400ECB542 /* BookDetailCell.xib in Resources */,
 				26BF8E3B22DF02A100FCCEF2 /* StartCollectionViewCell.xib in Resources */,
+				265AB4BD2320FA8C008CB29C /* ReadSetView.xib in Resources */,
 				26AAC7032304419500690C88 /* ShareViewController.xib in Resources */,
 				26AE2B9322F5D1A2008A4F61 /* HomeCollectionReusableView.xib in Resources */,
 				26ADED5E22F463920024D62A /* MineTableViewCell.xib in Resources */,
@@ -1553,6 +1591,7 @@
 				26C7625522DC2EC900E739A7 /* Main.storyboard in Resources */,
 				260E3B9A22DD610D00563FBA /* 1.png in Resources */,
 				26A8C51722FF0CF000991652 /* ClassflyTableViewCell.xib in Resources */,
+				265AB4C5232109BC008CB29C /* ReadSetCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1634,6 +1673,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-novel/Pods-novel-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		93730ED8EAA8A20E6F0A29B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-novel/Pods-novel-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-novel/Pods-novel-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-novel/Pods-novel-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		956E97F72BD67C24F879914A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1672,8 +1728,10 @@
 				26BF8EEC22DF248E00FCCEF2 /* NSValue+Compat.m in Sources */,
 				26F54EDA2317D3FC0033CE66 /* UIScrollView+VTMagic.m in Sources */,
 				26C762A422DC625A00E739A7 /* BaseConnectionController.m in Sources */,
+				265AB4C023210239008CB29C /* UIImage+circle.m in Sources */,
 				26BF8EE022DF248E00FCCEF2 /* LOTPathAnimator.m in Sources */,
 				26A5E5F72306DE4400ECB542 /* BookDetailCell.m in Sources */,
+				26BF4C6923225BB2008D9390 /* ReadView.m in Sources */,
 				26C7628A22DC49A100E739A7 /* BaseModel.m in Sources */,
 				26BF8ED722DF248E00FCCEF2 /* LOTColorInterpolator.m in Sources */,
 				26BF8EFC22DF248E00FCCEF2 /* LOTShapeTransform.m in Sources */,
@@ -1748,6 +1806,7 @@
 				26A514EB22E1B2DC007920A6 /* GKSearchDataQueue.m in Sources */,
 				26C762A522DC625A00E739A7 /* BaseNavigationController.m in Sources */,
 				26BF8EED22DF248E00FCCEF2 /* CALayer+Compat.m in Sources */,
+				265AB4BB2320FA82008CB29C /* ReadSetView.m in Sources */,
 				26C762A222DC625A00E739A7 /* BaseTableViewController.m in Sources */,
 				26C7629422DC4EDA00E739A7 /* RankModel.m in Sources */,
 				260E3BAD22DDBCD600563FBA /* MineViewController.m in Sources */,
@@ -1756,6 +1815,7 @@
 				26ABB0EC22E0016000FF106B /* BaseNetManager.m in Sources */,
 				26BF8F0D22DF248E00FCCEF2 /* LOTKeyframe.m in Sources */,
 				26A5150322E1B37E007920A6 /* GKBookReadModel.m in Sources */,
+				2688D25623239F6700B3FA90 /* BookChapterCell.m in Sources */,
 				26BF8ED622DF248E00FCCEF2 /* LOTTrimPathNode.m in Sources */,
 				26BF8EE722DF248E00FCCEF2 /* LOTStrokeRenderer.m in Sources */,
 				26ADED6222F469400024D62A /* MineSelectController.m in Sources */,
@@ -1779,6 +1839,7 @@
 				26BF8EFD22DF248E00FCCEF2 /* LOTShapeStroke.m in Sources */,
 				26BF8EE822DF248E00FCCEF2 /* LOTFillRenderer.m in Sources */,
 				26A514EE22E1B2DC007920A6 /* GKBookCacheDataQueue.m in Sources */,
+				265AB4C4232109BC008CB29C /* ReadSetCell.m in Sources */,
 				26ABB0EF22E0020200FF106B /* BaseNetTool.m in Sources */,
 				26BF8EDC22DF248E00FCCEF2 /* LOTTransformInterpolator.m in Sources */,
 				26BEFE9E22F8607300336479 /* ThemeTableViewCell.m in Sources */,
@@ -1809,6 +1870,7 @@
 				26BF8F0022DF248E00FCCEF2 /* LOTRadialGradientLayer.m in Sources */,
 				26BF8EF622DF248E00FCCEF2 /* LOTShapeRepeater.m in Sources */,
 				26BF8EF922DF248E00FCCEF2 /* LOTShapePath.m in Sources */,
+				26992663232E731C0067EAD7 /* ShareTool.m in Sources */,
 				260E3BB022DDC15300563FBA /* LaunchViewController.m in Sources */,
 				26A5150B22E1B40B007920A6 /* GKBookDetailModel.m in Sources */,
 				267307F82318120C00E6B3D0 /* ClassItemViewController.m in Sources */,

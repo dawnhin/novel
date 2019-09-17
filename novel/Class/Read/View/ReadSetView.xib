@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ReadSetView">
+            <rect key="frame" x="0.0" y="0.0" width="515" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_an" translatesAutoresizingMaskIntoConstraints="NO" id="okX-vK-t88">
+                    <rect key="frame" x="15" y="10" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="2Xp-NZ-iNH"/>
+                        <constraint firstAttribute="height" constant="20" id="bbw-A5-nAC"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_liang" translatesAutoresizingMaskIntoConstraints="NO" id="5eu-eO-a5h">
+                    <rect key="frame" x="480" y="15" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="eEO-tl-jaI"/>
+                        <constraint firstAttribute="width" constant="20" id="ik8-tt-zDq"/>
+                    </constraints>
+                </imageView>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NfN-g1-bqA">
+                    <rect key="frame" x="43" y="5" width="429" height="31"/>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="字号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUO-aN-4c2">
+                    <rect key="frame" x="15" y="55" width="29" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SVg-YZ-mm4">
+                    <rect key="frame" x="0.0" y="97" width="515" height="68"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ojq-NS-Dfu">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LaM-S5-eEa">
+                    <rect key="frame" x="59" y="48.5" width="441" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Boq-tc-66f"/>
+                    </constraints>
+                    <segments>
+                        <segment title="A-"/>
+                        <segment title="A"/>
+                        <segment title="A+"/>
+                    </segments>
+                </segmentedControl>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="NfN-g1-bqA" firstAttribute="leading" secondItem="okX-vK-t88" secondAttribute="trailing" constant="10" id="1Dd-he-I25"/>
+                <constraint firstItem="NUO-aN-4c2" firstAttribute="leading" secondItem="okX-vK-t88" secondAttribute="leading" id="37C-zK-RC5"/>
+                <constraint firstItem="LaM-S5-eEa" firstAttribute="leading" secondItem="NUO-aN-4c2" secondAttribute="trailing" constant="15" id="73q-1J-waW"/>
+                <constraint firstItem="NUO-aN-4c2" firstAttribute="top" secondItem="okX-vK-t88" secondAttribute="bottom" constant="25" id="DUv-R9-FHi"/>
+                <constraint firstItem="okX-vK-t88" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="DjO-Gh-Fb2"/>
+                <constraint firstItem="okX-vK-t88" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="Hlp-4p-S6h"/>
+                <constraint firstItem="5eu-eO-a5h" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="MEg-d2-fjU"/>
+                <constraint firstItem="SVg-YZ-mm4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QWc-1Z-W0p"/>
+                <constraint firstItem="5eu-eO-a5h" firstAttribute="leading" secondItem="NfN-g1-bqA" secondAttribute="trailing" constant="10" id="bgq-M9-De0"/>
+                <constraint firstItem="LaM-S5-eEa" firstAttribute="centerY" secondItem="NUO-aN-4c2" secondAttribute="centerY" id="hxA-vy-9Er"/>
+                <constraint firstAttribute="trailing" secondItem="SVg-YZ-mm4" secondAttribute="trailing" id="l4f-HU-3OZ"/>
+                <constraint firstItem="SVg-YZ-mm4" firstAttribute="top" secondItem="NUO-aN-4c2" secondAttribute="bottom" constant="25" id="muu-CA-f0R"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5eu-eO-a5h" secondAttribute="trailing" constant="15" id="nXV-dN-A69"/>
+                <constraint firstItem="NfN-g1-bqA" firstAttribute="centerY" secondItem="okX-vK-t88" secondAttribute="centerY" id="oPc-Mw-VL9"/>
+                <constraint firstItem="LaM-S5-eEa" firstAttribute="trailing" secondItem="5eu-eO-a5h" secondAttribute="trailing" id="p49-hb-yUm"/>
+                <constraint firstAttribute="bottom" secondItem="SVg-YZ-mm4" secondAttribute="bottom" constant="15" id="pBN-ke-Zde"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="collectionView" destination="SVg-YZ-mm4" id="QlN-Yt-GeG"/>
+                <outlet property="segmentControl" destination="LaM-S5-eEa" id="spo-rx-flW"/>
+                <outlet property="slider" destination="NfN-g1-bqA" id="dp1-31-j0g"/>
+            </connections>
+            <point key="canvasLocation" x="242.40000000000001" y="372.41379310344831"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_an" width="15" height="15"/>
+        <image name="icon_liang" width="15" height="15"/>
+    </resources>
+</document>

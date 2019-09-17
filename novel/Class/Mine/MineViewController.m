@@ -11,7 +11,7 @@
 #import "MineTableViewCell.h"
 #import "MineSelectController.h"
 #import "StartViewController.h"
-#import "BooCaseController.h"
+#import "BookCaseViewController.h"
 #import "BookHistoryController.h"
 #import "ThemeViewController.h"
 @interface MineViewController ()
@@ -54,6 +54,7 @@ static NSString *theme = @"主题";
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
     NSDictionary *dictionary=self.listArray[indexPath.row];
     cell.titleLabel.text=dictionary[@"title"];
     cell.subTitleLabel.text=dictionary[@"subTitle"];
@@ -74,7 +75,7 @@ static NSString *theme = @"主题";
         }
             break;
         case 2:{
-            BooCaseController *viewController=[[BooCaseController alloc]init];
+            BookCaseViewController *viewController=[[BookCaseViewController alloc]init];
             [viewController setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:viewController animated:YES];
             

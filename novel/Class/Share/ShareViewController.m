@@ -9,6 +9,10 @@
 #import "ShareViewController.h"
 #import "ShareViewCell.h"
 #import <HWPanModal/HWPanModal.h>
+#import "ShareTool.h"
+#import <SVProgressHUD.h>
+#import "GKBookDetailModel.h"
+#import "GKBookListDetailModel.h"
 @interface ShareViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
@@ -73,6 +77,34 @@ static NSString * const cellID=@"ShareViewCell";
     cell.imageView.image=[UIImage imageNamed:self.listImages[indexPath.row]];
     cell.titleLabel.text=self.listData[indexPath.row];
     return cell;
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.item) {
+        case 4:{
+            [ShareTool shareSystem:self.bookListDetailModel.title url:self.bookListDetailModel.shareLink completion:^(NSString * _Nonnull error) {
+                [SVProgressHUD showErrorWithStatus:error];
+            }];
+        }
+            break;
+        case 5:{
+            UIPasteboard *board=[UIPasteboard generalPasteboard];
+            board.string=self.bookListDetailModel.shareLink;
+            [SVProgressHUD showSuccessWithStatus: @"复制成功"];
+        }
+        default:{
+            if (self.bookDetailModel) {
+                [ShareTool shareTo:indexPath.item imageUrl:self.bookDetailModel.cover title:self.bookDetailModel.title subTitle:self.bookDetailModel.longIntro completion:^(NSString * _Nonnull error) {
+                    [SVProgressHUD showErrorWithStatus:error];
+                }];
+            }
+            else if (self.bookListDetailModel){
+                [ShareTool shareType:indexPath.item url:self.bookListDetailModel.shareLink title:self.bookListDetailModel.title subTitle:self.bookListDetailModel.desc completion:^(NSString * _Nonnull error) {
+                    [SVProgressHUD showErrorWithStatus:error];
+                }];
+            }
+        }
+            break;
+    }
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat width;
